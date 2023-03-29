@@ -34,7 +34,18 @@
 
         .circle{
             box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
+        .textarea{
+            display: flex;
+            align-items: center;
+            width: 90%;
+            height: 90%;
+
+        }
+        
 
     </style>
     <link rel="stylesheet" href="jquery-ui.css">
@@ -46,7 +57,11 @@
         <div class="plusButton">+</div>
     </div>
 
-    <div class="circle"></div>
+    <div class="circle">
+        <div class="textarea" contenteditable="true">
+            hello  i am editable text
+        </div>
+    </div>
 
     <script src="jquery-3.6.4.js"></script>
     <script src="jquery-ui.min.js"></script>
@@ -76,8 +91,7 @@
 
         $('body').on('click','.circle',function(){
             $(this).toggleClass('selected');
-        })
-
+        }) 
        //remove selection from circles if just the body was clicked
        $('body').click(function(event){
             if ($(event.target).is('body')){
