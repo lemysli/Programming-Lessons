@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+            font-family: 'Courier New', Courier, monospace;
+            background-color: black;
+            color: greenyellow;
+        }
+
+    </style>
+</head>
+<body>
+
+<script src="jquery-3.6.4.js"></script>  
+
+<Script>
+
+    const text = `>> python
+Python 3.9.1 (default, Feb  5 2021, 13:44:28)
+[GCC 8.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+
+>>> import os
+>>> import sys
+>>> import time
+>>> target_ip = "192.168.0.1"
+>>> target_username = "admin"
+>>> target_password = "password123"
+
+>>> def connect_to_target(ip, username, password):
+...     # code to establish a connection to the target machine
+...     pass
+
+>>> def brute_force_password(ip, username):
+...     # code to brute force the password for the given username on the target machine
+...     pass
+
+>>> def exploit_target(ip, username, password):
+...     # code to exploit a vulnerability on the target machine and gain access
+...     pass
+
+>>> def hack_the_system():
+...     print("Initiating hack...")
+...     time.sleep(2)
+...     print("Connecting to target machine at {}...".format(target_ip))
+...     connect_to_target(target_ip, target_username, target_password)
+...     time.sleep(2)
+...     print("Attempting to brute force password for user {}...".format(target_username))
+...     brute_force_password(target_ip, target_username)
+...     time.sleep(2)
+...     print("Exploiting vulnerabilities on target machine...")
+...     exploit_target(target_ip, target_username, target_password)
+...     time.sleep(2)
+...     print("Hack successful! Access granted to target machine.")
+
+        >>> hack_the_system()
+    `
+
+
+    let myArray = [];
+
+    let characterIndex = 0;
+
+    for (let i=0; i < text.length; i++){
+
+           /*  //detect linebreaks
+            if (text[i] === `\n`){
+                myArray.push(`\n`);
+            } else{ //not a line break
+                myArray.push(text[i]);
+            } */
+
+        myArray.push(text[i]);
+    }
+
+    $(document).on('keydown', function(event){
+
+        if (myArray[characterIndex] === "\n"){
+            $('body').append(`<br>`);
+
+        }   else {
+                $('body').append(myArray[characterIndex]);
+        }
+
+        $('body').append(myArray[characterIndex]);
+
+        characterIndex++;
+
+    })
+
+</Script>
+
+
+</body>
+</html>
