@@ -12,10 +12,25 @@
             background-color: black;
             color: greenyellow;
         }
+        #cursor {
+            display: inline-block;
+            width: 10px;
+            height: 1.2em;
+            background-color:green;
+            animation: blink 0.7s step-end infinite;
+            margin-left: 2px;
+        }
+        @keyframes blink{
+            50% {
+                opacity: 0;
+            }
+        }
 
     </style>
 </head>
 <body>
+
+    <div id="cursor"></div>
 
 <script src="jquery-3.6.4.js"></script>  
 
@@ -29,6 +44,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> import os
 >>> import sys
 >>> import time
+
 >>> target_ip = "192.168.0.1"
 >>> target_username = "admin"
 >>> target_password = "password123"
@@ -59,13 +75,15 @@ Type "help", "copyright", "credits" or "license" for more information.
 ...     time.sleep(2)
 ...     print("Hack successful! Access granted to target machine.")
 
-        >>> hack_the_system()
+>>> hack_the_system()
     `
 
 
     let myArray = [];
 
     let characterIndex = 0;
+
+    const cursor = $('#cursor') //selecting the element with id cursor
 
     for (let i=0; i < text.length; i++){
 
@@ -88,8 +106,9 @@ Type "help", "copyright", "credits" or "license" for more information.
                 $('body').append(myArray[characterIndex]);
         }
 
-        $('body').append(myArray[characterIndex]);
+        $('body').append(cursor); //append the cursor alway as the last element in the body
 
+        
         characterIndex++;
 
     })
